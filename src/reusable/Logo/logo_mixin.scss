@@ -1,0 +1,22 @@
+.header-nav__logo {
+  display: flex;
+  align-items: center;
+  gap: 1vw;
+  .header-nav__logo-img {
+    width: calc(2.4vw + 3.6em);
+    height: calc(2.4vw + 3.6em);
+  }
+  .header-nav__logo-text {
+    color: #fff;
+    letter-spacing: 2px;
+    font-weight: 600;
+    text-shadow: 0 0 4px black;
+    .header-nav__logo-text-h3 {
+      font-size: $font-size-h3;
+      line-height: 1.15;
+    }
+    .header-nav__logo-text-h6 {
+      font-size: $font-size-h6;
+    }
+  }
+}

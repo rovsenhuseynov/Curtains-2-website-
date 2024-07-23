@@ -1,0 +1,44 @@
+@import "../../../assets/fonts/fonts.scss";
+@import "../../../assets/fonts/variables.scss";
+@import "../../../reusable/Logo/logo_mixin.scss";
+
+.footer-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 25px;
+  padding-block: calc(2vw + 1rem);
+
+  .footer-top__contact-info {
+    .footer-logo {
+      margin-bottom: 3vw;
+    }
+
+    .footer-top__contact-info_title {
+      color: $color_white;
+      font-size: calc(1.5vw + 1rem);
+      text-transform: uppercase;
+      margin-bottom: calc(1vw + 0.5rem);
+    }
+
+    .footer-top__contact-info_tel-numbers {
+      color: $color_white;
+      font-size: calc(1.5vw + 1rem);
+      margin-bottom: calc(1vw + 0.5rem);
+
+      .footer-top__contact-info_number-1,
+      .footer-top__contact-info_number-2 {
+        color: $color_white;
+        transition: 0.5s;
+        &:hover {
+          color: $color_yellow;
+        }
+      }
+    }
+  }
+
+  .footer-top__map {
+    box-shadow: 0 0 20px black;
+  }
+}

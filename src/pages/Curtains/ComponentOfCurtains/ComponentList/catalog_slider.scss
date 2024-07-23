@@ -1,0 +1,99 @@
+@import "../../../../assets/fonts/variables.scss";
+
+@mixin line_style {
+  border-bottom: 0.5px solid $color_text-gray;
+  box-shadow: 1px 1px 20px black;
+  margin-bottom: 1vw;
+}
+
+@mixin top_h4 {
+  margin-bottom: 1vw;
+  color: white;
+  font-size: calc(0.8vw + 1rem);
+  line-height: 38px;
+  letter-spacing: normal;
+  text-shadow: 1px 1px 2px black;
+  transition: ease 0.4s;
+}
+
+@mixin top_img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 23px;
+  filter: drop-shadow(1px 1px 15px black);
+}
+
+.swiper {
+  width: 94%;
+  z-index: 1;
+  margin-bottom: calc(1vw + 0.5rem);
+  .swiper-wrapper {
+    display: flex;
+    position: relative;
+
+    .swiper-catalog__item {
+      margin-bottom: calc(0.48% + 0.48rem);
+      background-color: $color_bg-cards;
+      box-shadow: 0 0 3px black;
+      padding: calc(1.6vw + 0.8rem);
+      border-radius: calc(1vw + 0.5rem);
+      color: white;
+      height: auto;
+      transition: 0.4s;
+
+      .swiper-catalog__item-link {
+        .swiper-catalog__item-img {
+          @include top_img;
+        }
+        .swiper-catalog__item-title {
+          @include top_h4;
+        }
+        &:hover {
+          > .swiper-catalog__item-title {
+            color: $color_yellow !important;
+          }
+        }
+      }
+
+      .swiper-catalog__item-line {
+        @include line_style;
+      }
+
+      &:hover {
+        box-shadow: 1px 1px 50px black;
+      }
+      &:active {
+        box-shadow: 0 0 0 black;
+        transition: 0.1s;
+      }
+    }
+  }
+
+  .swiper-scrollbar {
+    .swiper-scrollbar-drag {
+      background-color: $color_yellow;
+    }
+    cursor: grab;
+    scroll-behavior: auto;
+
+    &:active {
+      cursor: grabbing;
+    }
+  }
+}
+
+.scrollers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: calc(2vw + 1rem);
+  margin-bottom: calc(2vw + 1rem);
+
+  .end-of-list {
+    opacity: 0.1;
+  }
+  .start-of-list {
+    opacity: 0.1;
+  }
+}
+

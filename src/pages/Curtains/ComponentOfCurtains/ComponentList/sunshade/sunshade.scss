@@ -1,0 +1,57 @@
+@import "../../../../../assets/fonts/fonts.scss";
+@import "../../../../../assets/fonts/variables.scss";
+
+.sunshade {
+  width: 100%;
+  height: auto;
+  position: relative;
+  padding-bottom: calc(2vw + 1rem);
+  border-top: calc(0.6vw + 0.3rem) solid #000;
+  color: #fff;
+
+  .sunshade__header-bgr {
+    margin-bottom: 5vw;
+    .menu-parallaxComponents__content {
+      height: 60vh;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+     
+
+      @media (max-width: 1023px) {
+        height: 25vh;
+      }
+
+      .menu-parallaxComponents__content-context {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 2vh;
+        position: relative;
+        z-index: 5;
+    
+        .menu-parallaxComponents__content-title {
+          font-family: snellroundhand_bold;
+          color: $color_yellow;
+          font-size: calc(4vw + 3rem);
+          text-shadow: 0 0 15px black;
+          text-align: center;
+          font-style: italic;
+          line-height: 0;
+          letter-spacing: 2px;
+        }
+        .menu-parallaxComponents__content-text {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.sunshade-content-line1 {
+  border-bottom: .5px solid #fff;
+  margin-block: 5vw;
+  box-shadow: 0 6px 10px #fff;
+}
+

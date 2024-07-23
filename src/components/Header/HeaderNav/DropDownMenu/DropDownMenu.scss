@@ -1,0 +1,49 @@
+@import "../../../../assets/fonts/variables.scss";
+
+.dropdown {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: rgba(0, 0, 0, .5);
+  position: absolute;
+  display: none;
+  z-index: 1;
+  border-radius: 10px;
+  font-size: $font-size-p;
+  font-weight: 800;
+  li {
+    position: relative;
+
+    a {
+      display: block;
+      color: white;
+      padding: 12px 16px;
+      text-decoration: none;
+      text-wrap: nowrap;
+      font-size: $font-size-p;
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.9);
+        border-radius: 10px;
+        color: #ffffff;
+        font-weight: 800;
+        text-wrap: nowrap;
+      }
+      &.active{
+        color: rgb(238, 150, 72);
+      }
+    }
+  }
+}
+@media (max-width: 1023px) {
+  .dropdown {
+    background-color: rgba(0, 0, 0, 1);
+    border: .5px solid #fff;
+  }
+}
+
+/* Показ меню при наведении */
+.header__nav-item:hover .dropdown {
+  display: block;
+}
+

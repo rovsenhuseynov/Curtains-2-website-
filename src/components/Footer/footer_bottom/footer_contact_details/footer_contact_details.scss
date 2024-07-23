@@ -1,0 +1,45 @@
+@import '../../../../assets/fonts/variables.scss';
+
+.contact-info {
+  min-width: 260px;
+  max-width: 380px;
+  font-weight: 100;
+  text-shadow: 1px 1px 2px black;
+  .contact-info__item {
+    display: flex;
+    align-items: center;
+    // flex-wrap: wrap;
+    margin-bottom: calc(1vw + .6rem);
+    gap: calc(1.2vw + .5rem);
+    color: $color_text-gray;
+    .contact-info__item_svg {
+      width: 20px;
+      height: 20px;
+    }
+    .contact-info__item-text-block {
+      display: flex;
+      flex-direction: column;
+      .contact-info__item_text {
+        font-size: calc(.4vw + 1rem);
+        &:hover {
+          color: white;
+        }
+      }
+      .contact-info__item_location,
+      .contact-info__item_watch {
+        font-size: 22px;
+        &:hover {
+          color: white;
+        }
+      }
+      .contact-info__item_mail,
+      .contact-info__item_call {
+        font-size: calc(.7vw + .7rem);
+        transition: 0.5s;
+        &:hover {
+          color: $color_yellow;
+        }
+      }
+    }
+  }
+}

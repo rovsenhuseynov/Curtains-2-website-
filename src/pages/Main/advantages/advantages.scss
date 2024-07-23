@@ -1,0 +1,90 @@
+@import "../../../assets/fonts/variables.scss";
+
+.advantages {
+  user-select: none;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 1),
+      rgba(0, 0, 0, 0) 30%
+    ),
+    linear-gradient(to top, rgb(22,22,22), rgba(255, 255, 255, 0) 20%),
+    url(../../../assets/images/WEBP_formats/bogatyr-club.webp);
+  background-position: center, center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  min-height: 70vw;
+  overflow: auto;
+  position: relative;
+  pointer-events: auto;
+
+  .container {
+    padding-inline: 5vw;
+    padding-block: 5vw;
+
+    .advantages_title {
+      @include large_font;
+      text-align: center;
+      margin-bottom: calc(3vw + 1.5rem);
+    }
+
+    .advantages-content__blocks {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+
+      .advantages-content__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-radius: calc(1vw + 0.5rem);
+        margin-bottom: calc(2vw + 1rem);
+        padding: calc(0.4vw + 0.2rem);
+        background-color: $color_bg-cards;
+        min-width: 250px;
+        color: white;
+        border: 0.5px solid #fff;
+        box-shadow: 0 0 10px #000;
+        flex: 1 1 45%;
+        transition: background-color 0.4s ease;
+        margin-inline: 1.5vw;
+        &:hover {
+          background-color: $bg-tr_hover;
+        }
+
+        .advantages-content__item-link {
+          padding: calc(0.8vw + 0.4rem);
+          width: calc(4vw + 2rem);
+          height: calc(4vw + 2rem);
+          aspect-ratio: 1/1;
+          border-radius: 50%;
+          background-color: $color_yellow;
+          border: 2px solid white;
+          margin: calc(1.2vw + 0.6rem);
+          transition: background-color 0.4s;
+          &:hover {
+            background-color: rgba(168, 118, 42, 0.8);
+          }
+        }
+        .advantages-content__item-text {
+          flex-basis: 1 1 70%;
+          text-align: center;
+          text-shadow: 1px 1px 3px black;
+          margin: calc(0.6vw + 0.3rem);
+          .advantages-content__item-text-h3 {
+            color: #fff;
+            font-weight: 600;
+            @include text_style_h3;
+            color: $color_yellow;
+          }
+          .advantages-content__item-text-p {
+            color: #fff;
+            @include text_style_p;
+            transition: 0.3s ease;
+          }
+        }
+      }
+    }
+  }
+}

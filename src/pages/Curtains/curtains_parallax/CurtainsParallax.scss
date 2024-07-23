@@ -1,0 +1,80 @@
+@import "../../../assets/fonts/variables.scss";
+
+.curtains-parallaxComponents {
+  position: relative;
+  overflow: hidden;
+  user-select: none;
+  padding-inline: 2.5vw;
+  // Применяем стили ко всем .menu-parallaxTop, кроме последнего
+  &:not(:last-of-type) {
+    margin-bottom: 5vh;
+  }
+  .menu-parallaxComponents__content {
+    height: 80vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: grid;
+    position: relative;
+    @media (max-width: 1023px) {
+      height: 50vh;
+    }
+
+    .menu-parallaxComponents__content-context {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 4vh;
+      margin-bottom: 2vh;
+      position: relative;
+      z-index: 5;
+
+      .menu-parallaxComponents__content-title {
+        font-family: Cormac-Black;
+        font-weight: 400;
+        color: $color_yellow;
+        font-size: calc(2vw + 2rem);
+        text-shadow: 0 0 10px black;
+        text-align: center;
+        font-style: italic;
+        line-height: 0.8;
+        letter-spacing: 2px;
+      }
+
+      .menu-parallaxComponents__content-text {
+        color: #fff;
+        text-wrap: balance;
+        font-size: $font-size-h4;
+        text-shadow: 0 0 10px black;
+        text-align: center;
+        line-height: 0.9;
+        margin-inline: 2vw;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        font-style: italic;
+        @media (max-width: 768px) {
+          font-size: $font-size-h5;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        rgb(0, 0, 0, 0.6),
+        rgba(248, 246, 246, 0) 60vh
+      ),
+      linear-gradient(to right, rgb(0, 0, 0, 1), rgba(0, 0, 0, 0) 20vw),
+      linear-gradient(to left, rgb(0, 0, 0, 1), rgba(0, 0, 0, 0) 20vw);
+    z-index: 1;
+  }
+}

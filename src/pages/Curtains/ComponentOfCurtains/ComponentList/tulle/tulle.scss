@@ -1,0 +1,124 @@
+@import "../../../../../assets/fonts/variables.scss";
+@import "../../../../../assets/fonts/fonts.scss";
+
+.tulle-catalog {
+  width: 100%;
+  height: auto;
+  position: relative;
+  padding-bottom: calc(2vw + 1rem);
+  border-top: .3vh solid #000;
+  .tulle-catalog__header-bgr {
+     margin-bottom: 1vh;
+    .tulle-catalog__title {
+      font-size: $font-size-h1;
+      font-weight: 600;
+      color: white;
+      text-shadow: 1px 1px 10px rgb(0, 0, 0);
+    }
+  }
+
+  .container {
+    padding-inline: 5vw;
+    .tulle-catalog__flex {
+      display: flex;
+      flex-direction: column;
+      gap: calc(3vw + 1.5rem);
+
+      .tulle-catalog__group {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        .tulle-catalog__img-wrapper {
+          min-width: 260px;
+          width: 32.7%;
+          height: auto;
+          overflow: hidden;
+          text-align: center;
+
+          .tulle-catalog__item-image {
+            transition: 0.5s;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            cursor: pointer;
+            &:hover {
+              transform: scale(1.15);
+            }
+          }
+          .tulle-catalog__item-title {
+            font-size: calc(1.2vw + 0.6rem);
+            text-shadow: 1px 1px 2px black;
+            color: $color_white;
+            display: inline;
+            line-height: 0.8;
+            cursor: pointer;
+            &:hover {
+              color: $color_yellow;
+            }
+
+            position: relative;
+            z-index: 1;
+
+            &::before {
+              content: "";
+              position: absolute;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              z-index: -1; // Задаем нижний z-index
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    .popup-content {
+      width: auto;
+      max-height: 100vh;
+      max-width: 100vw;
+      height: auto;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+      border: 5px solid #fff;
+      margin: 10px;
+
+      .popup-image {
+        width: auto;
+        height: auto;
+        max-height: 100vh;
+        max-width: 100vw;
+      }
+
+      .popup-close-button {
+        position: absolute;
+        top: calc(0.4vw + 0.2rem);
+        right: calc(1vw + 1rem);
+        font-weight: 900;
+        background: none;
+        border: none;
+        font-size: calc(1vw + 3rem);
+        color: red;
+        cursor: pointer;
+      }
+    }
+  }
+}

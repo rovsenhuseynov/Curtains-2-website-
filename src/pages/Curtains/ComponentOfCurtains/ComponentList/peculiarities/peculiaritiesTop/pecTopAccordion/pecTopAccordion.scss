@@ -1,0 +1,98 @@
+@import "../../../../../../../assets/fonts/variables.scss";
+
+.accordion {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  flex-wrap: wrap;
+  color: #fff;
+  word-spacing: 1.2px;
+  margin-bottom: 0;
+
+  .accordion__list {
+    background: rgba(255, 255, 255, 0.1);
+    padding: calc(1vw + 0.5rem);
+    box-shadow: 1px 1px 30px black;
+
+    .accordion__list-item {
+      @include text;
+      margin-bottom: calc(1.4vw + 0.4rem);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .accordion__list-item-btn {
+        font-weight: 100;
+      }
+      .arrow-icon {
+        border: 1px solid transparent;
+        border-radius: 50%;
+        margin: 0 calc(1vw + 0.5rem);
+        transition: transform 0.3s ease;
+        box-shadow: 0 0 10px black;
+
+        &.active {
+          transform: rotate(180deg);
+          box-shadow: inset 1px 1px 10px black;
+        }
+        &:hover {
+          transform: rotate(180deg);
+          box-shadow: inset 1px 1px 10px black;
+        }
+      }
+    }
+
+    .popup-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 100;
+    }
+  }
+
+  .on-wide-screens {
+    background: rgba(48, 48, 48, 0.2);
+    padding: calc(1vw + 0.5rem);
+    box-shadow: 1px 1px 30px black;
+    @include text;
+    font-size: calc(1vw + 0.5rem);
+    .on-wide-screens__block {
+      .on-wide-screens__block-text {
+        margin-bottom: calc(0.6vw + 0.3rem);
+      }
+    }
+  }
+}
+
+.popup {
+  width: 90%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: calc(0.8vw + 0.4rem);
+  padding-bottom: calc(2vw + 1rem);
+  z-index: 2000;
+  border-radius: calc(0.8vw + 0.4rem);
+
+  .popup-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    .popup-content__btn-close {
+      margin-left: auto;
+    }
+    .context-tab__text {
+      color: black;
+      text-align: center;
+      text-wrap: balance;
+      font-weight: 100;
+    }
+  }
+}

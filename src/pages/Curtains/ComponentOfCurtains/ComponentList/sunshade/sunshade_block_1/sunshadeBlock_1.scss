@@ -1,0 +1,53 @@
+@import '../../../../../../assets/fonts/variables.scss';
+
+.sunshade__block1 {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	justify-content: space-between;
+	align-items: center;
+	gap: calc(2vw + 1rem);
+	margin-bottom: calc(2vw + 1rem);
+
+	.sunshade__block1-texts {
+	  height: auto;
+
+	  .sunshade__block1-texts-lists {
+		margin-bottom: calc(2vw + 1rem);
+
+		.sunshade__block1-texts-lists-item {
+		  @include text_style_h4;
+		  color: $color_yellow;
+		  text-wrap: balance;
+		}
+	  }
+
+	  .sunshade__block1-texts-h3 {
+		@include text_style_h3;
+		margin-bottom: calc(1vw + 0.5rem);
+		text-wrap: balance;
+	  }
+	  .sunshade__block1-texts-p {
+		@include text_style_h5;
+		text-wrap: balance;
+	  }
+	}
+
+	.sunshade__block1-image {
+	  justify-self: end;
+	  max-height: 100vh;
+	  margin-top: calc(0.6vw + 0.3rem);
+	  border: 3px solid gray;
+	  transition: 0.3s ease;
+	}
+	@media (orientation: landscape) {
+	  .sunshade__block1-image {
+		justify-self: center;
+	  }
+	}
+  }
+
+  @media (max-width: 900px) {
+	.sunshade__block1 {
+	  grid-template-columns: 1fr;
+	}
+  }

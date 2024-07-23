@@ -1,0 +1,168 @@
+@import "../../../../../../assets/fonts/variables.scss";
+@import "../../../../../../assets/fonts/fonts.scss";
+
+.explanatory-images {
+  width: 100%;
+  height: auto;
+  position: relative;
+  padding-bottom: calc(2vw + 1rem);
+  // background-color: rgb(39, 39, 39);
+
+  .explanatory-images__title {
+    @include text_style_h1;
+    color: white;
+    text-shadow: 1px 1px 10px rgb(0, 0, 0);
+    text-align: center;
+    margin: calc(2vw + 1rem) 0;
+  }
+
+  .explanatory-images__group {
+    -webkit-column-count: 4;
+    -moz-column-count: 4;
+    column-count: 4;
+    -webkit-column-width: 24%;
+    -moz-column-width: 24%;
+    column-width: 24%;
+    position: relative;
+
+    .explanatory-images__item {
+      -webkit-transition: all 350ms ease;
+      transition: all 350ms ease;
+      cursor: pointer;
+      position: relative;
+      margin: auto;
+      margin-bottom: calc(2vw + 1rem);
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0);
+        transition: background-color 0.3s ease;
+      }
+      &:hover::before {
+        background-color: rgba(0, 0, 0, 0.3);
+      }
+
+      &:hover::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 40px; /* Ширина иконки */
+        height: 40px; /* Высота иконки */
+        background-image: url("../../../../../../assets/images/SVG_formats/iconEnlarge/enlarge.svg");
+        background-size: cover; /* Размеры иконки */
+        background-position: center; /* Позиция иконки */
+        z-index: 1;
+      }
+
+      .explanatory-images__item-image {
+        transition: 0.5s;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        box-shadow: 1px 1px 20px black;
+        cursor: pointer;
+      }
+
+      .explanatory-images__item-title {
+        font-size: calc(1vw + 0.6rem);
+        text-shadow: 1px 1px 2px black;
+        color: $color_white;
+        display: inline;
+        line-height: 0.8;
+        cursor: pointer;
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translate(-50%);
+        background-color: rgba(0, 0, 0, 0.6);
+        padding: 5px;
+        border-radius: 3px;
+      }
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .explanatory-images__group {
+      -webkit-column-count: 2;
+      -moz-column-count: 2;
+      column-count: 2;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .explanatory-images__group {
+      -webkit-column-count: 1;
+      -moz-column-count: 1;
+      column-count: 1;
+      -webkit-column-width: 100%;
+      -moz-column-width: 100%;
+      column-width: 100%;
+    }
+  }
+
+  .popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+
+    .popup-content {
+      width: auto;
+      max-height: 100vh;
+      max-width: 100vw;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+      border: 2px solid #fff;
+      margin: 10px;
+
+      .popup-image {
+        max-height: 100vh;
+        max-width: 100vw;
+      }
+
+      .popup-description {
+        position: absolute;
+        width: 75%;
+        z-index: 12;
+        bottom: 20px;
+        left: 50%;
+        transform: translate(-50%);
+        @include text_style_h6;
+        color: #000;
+        font-weight: 300;
+        text-align: center;
+        background-color: rgba(252, 252, 252, 0.4);
+        padding: 8px;
+      }
+
+      .popup-close-button {
+        position: absolute;
+        top: 0;
+        right: 10px;
+        font-weight: 500;
+        background: none;
+        border: none;
+        font-size: calc(2vw + 1rem);
+        color: red;
+        cursor: pointer;
+        z-index: 555555;
+      }
+    }
+  }
+}

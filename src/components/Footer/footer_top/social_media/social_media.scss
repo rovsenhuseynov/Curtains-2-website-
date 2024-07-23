@@ -1,0 +1,15 @@
+@import '../../../../assets/fonts/variables.scss';
+
+.footer-top__contact-info__social-media {
+  .logo-social-media_img {
+    width: calc(.5vw + 2rem);
+    height: calc(.5vw + 2rem);
+    margin-right: calc(1vw + 1rem);
+    border-radius: 50%;
+    transition: 0.4s;
+    z-index: 500;
+    &:hover {
+      box-shadow: inset 0 0 100px $color_yellow;
+    }
+  }
+}

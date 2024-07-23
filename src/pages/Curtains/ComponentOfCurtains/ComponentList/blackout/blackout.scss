@@ -1,0 +1,52 @@
+@import "../../../../../assets/fonts/fonts.scss";
+@import "../../../../../assets/fonts/variables.scss";
+
+.blackout {
+  width: 100%;
+  height: auto;
+  position: relative;
+  padding-bottom: calc(2vw + 1rem);
+  border-top: 0.2vh solid #000000;
+  color: #fff;
+  padding-top: 1vh;
+  .blackout__header-bgr {
+    background-position: center center;
+    width: 100%;
+
+    .menu-parallaxComponents__content {
+      height: 60vh;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+      @media (max-width: 1023px) {
+        height: 25vh;
+      }
+      @media (max-width: 768px) {
+        height: 20vh;
+      }
+
+      .menu-parallaxComponents__content-context {
+        .menu-parallaxComponents__content-title {
+          line-height: 0;
+          letter-spacing: 2px;
+        }
+        .menu-parallaxComponents__content-text {
+          letter-spacing: 8px;
+        }
+      }
+    }
+
+  }
+  .container {
+    .blackout__content {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      .blackout__content-line1 {
+        border-bottom: .5px solid #fff;
+        margin-block: 5vh;
+        box-shadow: 0 6px 10px #fff;
+      }
+    }
+  }
+}

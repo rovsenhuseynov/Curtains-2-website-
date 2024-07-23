@@ -1,0 +1,83 @@
+@import "../../../assets/fonts/variables.scss";
+
+.video-section {
+  position: relative;
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  min-height: 50vh;
+  height: auto;
+  padding-bottom: calc(2vw + 1rem);
+  padding-inline: 5vw;
+  padding-block: 3vw;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Это делает затемнения прозрачными для кликов */
+    z-index: 1;
+  }
+
+  &::before {
+    top: 0;
+    left: 0;
+    z-index: 1; /* Псевдоэлемент под контентом */
+    background: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  }
+
+  &::after {
+    bottom: 0;
+    right: 0;
+    z-index: 1; /* Псевдоэлемент под контентом */
+    background: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  }
+
+  .container {
+    position: relative;
+    z-index: 2;
+    .video-section__modal-overlay-title {
+      @include text_style_h3;
+      text-transform: uppercase;
+      text-align: center;
+      padding: calc(1vw + 1rem) 0;
+      color: #fff;
+    }
+
+    .modal-overlay {
+      background-color: transparent;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .modal-overlay__content {
+        border-radius: 4px;
+        max-width: 650px;
+        width: 100%;
+        box-shadow: 0 -10px 10px -5px rgba(0, 0, 0, 0.5),
+          -10px 0 10px -5px rgba(0, 0, 0, 0.5),
+          10px 0 10px -5px rgba(0, 0, 0, 0.5);
+      }
+    }
+  }
+}
+
+.video-section {
+  .container {
+    min-height: 50vh;
+    display: grid;
+    place-items: center;
+  }
+
+  .video-section__modal-overlay-btn-play {
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    img {
+      width: 10vw;
+      height: 10vw;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+@import "../../../../../assets/fonts/variables.scss";
+
+.peculiarities {
+  background: (
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)),
+    linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)),
+    url(../../../../../assets/images/img_for_peculiarities/bgr_for_features.jpg)
+  );
+  width: 100%;
+  height: auto;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+  .container {
+    .peculiarities__title {
+      @include text_style_h2;
+      text-align: center;
+      padding: calc(2vw + 1rem) 0;
+      color: $color_yellow;
+      font-weight: 100;
+    }
+  }
+  .blackout__content-line1 {
+		border-bottom: 1px solid gray;
+		margin: calc(2vw + 1rem) 0;
+	  }
+}

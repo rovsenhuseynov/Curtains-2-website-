@@ -1,0 +1,65 @@
+@import "../../../assets/fonts/variables.scss";
+
+@mixin textH2 {
+  font-size: calc(1.8vw + 0.9rem);
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin: calc(2vw + 1rem) 0;
+  text-align: center;
+}
+
+.curtains-top {
+  margin-bottom: calc(3vw + 1rem);
+
+  .container {
+    .curtains__title {
+      @include text_style_h2;
+      text-transform: uppercase;
+      margin: calc(2vw + 1rem) 0;
+      text-align: center;
+    }
+    .curtains__top-block {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: calc(1% + 1rem);
+
+      .curtains__preface {
+        margin-bottom: calc(1vw + 0.5rem);
+        @include text_style_h4;
+        font-style: italic;
+        color: $color_text-gray;
+        margin-left: 10px;
+      }
+
+      .image-container__item {
+        border-radius: 30px;
+      }
+
+      .curtains__preface,
+      .image-container__item {
+        flex: 1 1 40%;
+        width: 50%;
+      }
+
+      @media (max-width: 500px) {
+        .curtains__preface,
+        .image-container__item {
+          min-width: 270px;
+        }
+      }
+    }
+
+    .curtains__final-word {
+      @include text_style_h1;
+      font-weight: 100;
+      font-style: italic;
+      color: $color_yellow;
+      margin: calc(2vw + 1rem) 0;
+      text-align: center;
+      text-wrap: balance;
+    }
+  }
+}

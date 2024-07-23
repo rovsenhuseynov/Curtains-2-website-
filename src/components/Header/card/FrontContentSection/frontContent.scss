@@ -1,0 +1,77 @@
+@import "../../../../assets/fonts/variables.scss";
+@import "../../../../assets/fonts/fonts.scss";
+
+.front-content {
+  border: 0.5px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  background-image: url(../../../../assets/images/WEBP_formats/curtains_11.webp);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left;
+  position: relative;
+
+  .front-content__inner-container {
+    display: grid;
+    grid-template-columns: 4fr 5.8fr;
+    text-align: center;
+    height: 100%;
+
+    .front-content__text {
+      padding: 4%;
+      max-width: 100%;
+      height: 100%;
+
+      .front-content__text-title {
+        display: grid;
+        grid-template-rows: auto-fill;
+        height: 100%;
+
+        .text-title-2A {
+          @include text_style_h6;
+        }
+
+        .text-title-1 {
+          font-size: $font-size-h4;
+          font-family: Oswald;
+          font-weight: 500;
+          align-self: end;
+          color: transparent;
+          letter-spacing: 0.05em;
+          color: #fff;
+          text-shadow: 0 0 3px black;
+          text-transform: uppercase;
+        }
+
+        .barcode-text-style {
+          .text-title-2 {
+            align-self: end;
+            font-family: Barcode;
+            font-size: $font-size-bc;
+            line-height: 0.8;
+          }
+
+          .text-title-2B {
+            align-self: end;
+            font-family: MarkPro-Thin;
+            font-size: $font-size-sp;
+            letter-spacing: 0.8em;
+            line-height: 0.8;
+          }
+        }
+      }
+
+      .front-content__text-title > :last-child {
+        align-self: end;
+      }
+    }
+  }
+}
+
+.card-tel {
+  font-size: $font-size-h6;
+  font-family: MarkPro-Thin;
+  color: rgb(255,198,110);
+
+}

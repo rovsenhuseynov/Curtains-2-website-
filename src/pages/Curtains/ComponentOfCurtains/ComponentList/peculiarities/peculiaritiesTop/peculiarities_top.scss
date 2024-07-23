@@ -1,0 +1,53 @@
+@import "../../../../../../assets/fonts/variables.scss";
+
+.peculiarities-top {
+  .peculiarities-top__title {
+    @include text-style_h4;
+    margin: calc(2vw + 1rem);
+    text-align: center;
+
+    @media (max-width: 1024px) {
+      @include text-style_h4;
+      margin-top: 0;
+    }
+  }
+
+  .peculiarities-top__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: calc(1vw + 0.5rem);
+    .peculiarities-top__content_image {
+      width: auto;
+      aspect-ratio: 1/1.18;
+      box-shadow: 1px 1px 40px black;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .peculiarities-top {
+    .peculiarities-top__content {
+      grid-template-columns: 1fr;
+      place-items: center;
+      gap: calc(2vw + 1rem);
+      .peculiarities-top__content_image {
+        max-width: 83%;
+      }
+    }
+  }
+}
+
+@media (orientation: landscape) {
+  .peculiarities-top {
+    .peculiarities-top__content {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr;
+      .peculiarities-top__content_image {
+        width: auto;
+        max-height: 100vh;
+        aspect-ratio: 1/1.18;
+        box-shadow: 1px 1px 40px black;
+      }
+    }
+  }
+}

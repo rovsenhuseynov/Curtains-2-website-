@@ -1,0 +1,55 @@
+@import "../../../../../../assets/fonts/variables.scss";
+
+.blackout_mid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: space-between;
+  align-items: center;
+  gap: calc(2vw + 1rem);
+  margin-bottom: calc(2vw + 1rem);
+  padding-top: calc(2vw + 1rem);
+
+  .blackout_mid__block1,
+  .blackout_mid__block2 {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    height: auto;
+    .blackout_mid__block1-texts,
+    .blackout_mid__block2-texts {
+      margin-bottom: calc(2vw + 1rem);
+      .blackout_mid__block1-texts-content,
+      .blackout_mid__block2-texts-content {
+        @include text_style_h4;
+        color: $color_yellow;
+        // text-wrap: balance;
+      }
+    }
+    .blackout_mid__block1-image,
+    .blackout_mid__block2-image {
+     
+
+      max-height: 100vh;
+      margin-top: calc(0.6vw + 0.3rem);
+      border: 3px solid gray;
+      transition: 0.3s ease;
+      aspect-ratio: 960/1085;
+    }
+    transition: justify-content .3s ;
+  }
+  .blackout_mid__block2 {
+    justify-content: end;
+  }
+  @media (max-width: 992px) and (orientation: landscape) {
+    .blackout_mid__block1,
+    .blackout_mid__block2 {
+      justify-content: center;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .blackout_mid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,13 @@
+.myMap-style {
+  border-radius: 20px;
+  overflow: hidden;
+  width: calc(27vw + 10rem);
+  height: calc(10vw + 32vh);
+ 
+  @media (max-width: 1024px) {
+    width: 95vw;
+    height: calc(10vw + 32vh);
+    border-radius: 10px;
+    //  margin-inline: 5vw;
+  }
+}

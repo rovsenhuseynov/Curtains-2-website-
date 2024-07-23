@@ -1,0 +1,24 @@
+@import "../../assets/fonts/variables.scss";
+
+.gallery__item {
+  position: relative;
+  .gallery__item-counter {
+    position: absolute;
+    bottom: 20px;
+    background-color: rgba(2, 2, 2, 0.61);
+    padding: 3px 5px 1px 5px;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    border: 1px solid rgb(56, 56, 56);
+    box-shadow: 0 0 20px black;
+    // .gallery__item-counter-btn--ordered {
+    // }
+    .gallery__item-counter-dial {
+      margin: 0 calc(1vw + .5rem);
+      @include text_style_h5;
+    }
+    // .gallery__item-counter-spotter--btn {
+    // }
+  }
+}

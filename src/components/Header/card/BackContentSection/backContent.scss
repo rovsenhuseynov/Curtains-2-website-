@@ -1,0 +1,44 @@
+@import "../../../../assets/fonts/variables.scss";
+
+.back-content {
+  border: 0.5px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: calc(0.4vw + 0.2rem);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .back-content__text {
+    text-align: center;
+    @include text_style_h5;
+    text-shadow: 1px 1px 2px black;
+  }
+
+  /* Этот текст заменяет на карточке собой "back-content__text" на экранах  шириной менее 770px */
+  .small-text {
+    text-align: center;
+    @include text_style_h5;
+  }
+
+  /* Для экранов шириной до 770px */
+  @media screen and (max-width: 799px) {
+    .back-content__text {
+      display: none; /* Скрываем back-content__text на экранах до 770px */
+    }
+    .small-text {
+      display: block; /* Показываем small-text на экранах до 770px */
+    }
+  }
+
+  /* Для экранов шириной более 770px */
+  @media screen and (min-width: 800px) {
+    .back-content__text {
+      display: block; /* Показываем back-content__text на экранах более 770px */
+    }
+    .small-text {
+      display: none; /* Скрываем small-text на экранах более 770px */
+    }
+  }
+}

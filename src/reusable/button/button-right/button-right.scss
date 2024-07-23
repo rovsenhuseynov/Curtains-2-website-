@@ -1,0 +1,5 @@
+@import "../buttons_mixin.scss";
+
+.scrollToRight__button {
+  @include button_styles;
+}

@@ -1,0 +1,124 @@
+@import "../../../../../../assets/fonts/variables.scss";
+
+.blackout-bottom {
+  position: relative;
+
+  .model {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+    visibility: hidden;
+    opacity: 0;
+
+    .desc-img-wrapper {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      .close {
+        position: absolute;
+        top: 0;
+        right: 0;
+        cursor: pointer;
+        z-index: 9999;
+        width: calc(1vw + 1.5rem);
+        cursor: pointer;
+  
+      }
+      .images {
+        max-width: 90%;
+        max-height: 90%;
+        width: auto;
+        height: auto;
+        box-sizing: border-box;
+        border: 3px solid gainsboro;
+      }
+      .description {
+        text-align: center;
+        @include text_style_h5;
+        font-style: italic;
+      }
+
+    }
+
+
+  }
+
+  &.modal-open {
+    .model {
+      visibility: visible;
+      opacity: 1;
+      transition: opacity 0.6s ease-in-out;
+    }
+  }
+
+  .content-container {
+    opacity: 1;
+    transition: opacity 0.4s ease;
+
+    &.modal-open {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+
+  .blackout-bottom__text {
+    text-align: center;
+    text-wrap: balance;
+    margin-bottom: calc(2vw + 1rem);
+    color: $color_yellow;
+    @include text_style_h3;
+  }
+
+  .blackout-bottom__gallery {
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+    -webkit-column-width: 33%;
+    -moz-column-width: 33%;
+    column-width: 33%;
+    padding: 0 12px;
+
+    .pics {
+      -webkit-transition: all 350ms ease;
+      transition: all 350ms ease;
+      cursor: pointer;
+      margin-bottom: 12px;
+      filter: opacity(0.35);
+
+      &:hover {
+        filter: opacity(0.7);
+      }
+    }
+  }
+
+  @media (max-width: 991px) {
+    .blackout-bottom__gallery {
+      -webkit-column-count: 2;
+      -moz-column-count: 2;
+      column-count: 2;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .blackout-bottom__gallery {
+      -webkit-column-count: 1;
+      -moz-column-count: 1;
+      column-count: 1;
+      -webkit-column-width: 100%;
+      -moz-column-width: 100%;
+      column-width: 100%;
+    }
+  }
+}

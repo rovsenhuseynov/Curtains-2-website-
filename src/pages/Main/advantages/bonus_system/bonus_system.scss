@@ -1,0 +1,128 @@
+@import "../../../../assets/fonts/variables.scss";
+
+.advantages-bonus {
+  width: 100%;
+  padding-top: calc(2vw + 1rem);
+  color: #fff;
+  .container {
+    .advantages-bonus__title {
+      text-align: center;
+      @include large_font;
+      padding: calc(2vw + 1rem) 0;
+    }
+    .advantages-bonus__head_background {
+      background: linear-gradient(
+          to top,
+          rgba(22, 22, 22, 1),
+          rgba(0, 0, 0, 0) 15%
+        ),
+        linear-gradient(to bottom, rgba(22, 22, 22, 1), rgba(0, 0, 0, 0) 15%),
+        url(../../../../assets/images/advantages-bonus/advantages-bonus__head_background_2.webp);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center right;
+      width: 100%;
+      aspect-ratio: 1920/549; //соотношение сторон
+    }
+
+    .advantages-bonus__card {
+      text-align: start;
+      @include large_font;
+      padding: calc(3vw + 1rem) 0;
+    }
+    @media (max-width: 800px) {
+      .advantages-bonus__card {
+        line-height: 1;
+        padding: calc(1vw + 0.5rem) 0;
+      }
+    }
+
+    .advantages-bonus__contecst {
+      .editable-text {
+        max-width: 40%;
+        @include text_style_h4;
+        color: rgb(0, 255, 76);
+        font-weight: 400;
+        @media (max-width: 375px) {
+          max-width: 60%;
+        }
+      }
+      .advantages-bonus__contecst-inexpensive {
+        @include text_style_h5;
+      }
+    }
+
+    .sunshade-content-line1 {
+      border-bottom: 1px solid gray;
+      margin: calc(2vw + 1rem) 0;
+    }
+    .instructions-disc {
+      .instructions-disc__title {
+        @include text_style_h1;
+        text-align: center;
+        margin: calc(2vw + 1rem) 0;
+        color: yellowgreen;
+        font-weight: 300;
+      }
+
+      .instructions-disc__content {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        justify-items: end;
+        gap: calc(2vw + 1rem);
+
+        .instructions-disc__content-text {
+          @include text;
+        }
+
+        .disc__content-img {
+          border: 1px solid #fff;
+          margin-bottom: calc(2vw + 1rem);
+          // justify-self: center;
+        }
+
+        @media only screen and (max-width: 380px) {
+          .instructions-disc__content-img-3 {
+            display: block; /* Показать изображение */
+            
+          }
+          .instructions-disc__content-img-2,
+          .instructions-disc__content-img-1 {
+            display: none; /* Скрыть изображения */
+          }
+        }
+
+        /* Для экранов шириной от 381px до 980px */
+        @media only screen and (min-width: 381px) and (max-width: 980px) {
+          .instructions-disc__content-img-2 {
+            display: block; /* Показать изображение */
+          }
+          .instructions-disc__content-img-3,
+          .instructions-disc__content-img-1 {
+            display: none; /* Скрыть изображения */
+          }
+        }
+
+        /* Для экранов шириной от 981px до 1920px */
+        @media only screen and (min-width: 981px) and (max-width: 1920px) {
+          .instructions-disc__content-img-1 {
+            display: block; /* Показать изображение */
+            
+          }
+          .instructions-disc__content-img-3,
+          .instructions-disc__content-img-2 {
+            display: none; /* Скрыть изображения */
+          }
+        }
+      }
+
+      @media (max-width: 500px) {
+        .instructions-disc__content {
+          grid-template-columns: 1fr;
+          gap: calc(1vw + 0.5rem);
+          justify-items: center;
+        }
+      }
+    }
+  }
+}

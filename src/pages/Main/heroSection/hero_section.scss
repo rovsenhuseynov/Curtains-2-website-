@@ -1,0 +1,49 @@
+@import "../../../assets/fonts/fonts.scss";
+@import "../../../assets/fonts/variables.scss";
+
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  gap: calc(0.5vw + 0.5rem);
+  padding-inline: 5vw;
+  padding-block: 3vw;
+  background-color: $background_color;
+  .hero-section-container {
+    .main-top {
+      display: grid;
+      justify-content: space-between;
+      grid-template-columns: 45% 45%;
+      margin: 80px 0 35px;
+
+      .main-top__title-h2 {
+        @include text_style_h2;
+        color: white;
+        text-transform: uppercase;
+        text-shadow: 0 0 2px #000;
+      }
+
+      .main-top__text {
+        @include text_style_p;
+        padding-left: 40px;
+        margin: 1vw 1vw;
+        color: white;
+        text-wrap: balance;
+      }
+    }
+
+    @media (max-width: 1200px) {
+      .main-top {
+        grid-template-columns: repeat(1, 95%);
+        margin-top: 40px;
+        text-align: center;
+      }
+      .main-top__title-h2 {
+        text-align: center;
+        margin-bottom: calc(2vw + 0.5rem);
+      }
+      .main-top__text {
+        padding-left: 0 !important;
+      }
+    }
+  }
+}

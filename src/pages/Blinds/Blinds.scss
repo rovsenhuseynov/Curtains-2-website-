@@ -1,0 +1,42 @@
+@import "../../assets/fonts/fonts.scss";
+@import "../../assets/fonts/variables.scss";
+
+
+.blinds {
+  margin-bottom: calc(2vw + 1rem);
+  color: #fff;
+  .container {
+    .blinds-wrapper {
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+      .blinds-wrapper__title {
+        @include text_style_h1;
+        font-weight: 100;
+        font-style: italic;
+        text-align: center;
+        margin: calc(2vw + 1rem) 0;
+        .lower-case {
+          font-style: italic;
+        }
+      }
+      .about-blinds {
+        .about-blinds__contecst {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-around;
+          gap: calc(2vw + 2em);
+
+          .about-blinds__text {
+            @include text;
+            flex: 1 1 43%;
+          }
+          .about-blinds__image {
+            flex: 1 1 43%;
+            aspect-ratio: 576/650;
+          }
+        }
+      }
+    }
+  }
+}

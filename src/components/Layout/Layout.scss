@@ -1,0 +1,26 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: rgb(22,22,22);
+}
+
+header {
+  flex-shrink: 0; // Header не сжимается
+}
+
+.main {
+  flex-grow: 1; // Main занимает все доступное пространство
+}
+
+.line1 {
+  border-bottom: .5px solid #fff;
+  margin-bottom: 5vw;
+  margin-inline: 5vw;
+  box-shadow: 0 6px 10px #fff;
+
+}
+
+footer {
+  flex-shrink: 0; // Footer не сжимается
+}
