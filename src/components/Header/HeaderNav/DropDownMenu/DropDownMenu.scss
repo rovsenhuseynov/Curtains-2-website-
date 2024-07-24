@@ -31,7 +31,7 @@
       }
       &.active {
         color: rgb(238, 150, 72);
-        text-wrap: nowrap;
+
       }
     }
   }
@@ -48,4 +48,9 @@
 /* Показ меню при наведении */
 .header__nav-item:hover .dropdown {
   display: block;
+}
+
+
+.dropdown__item-link{
+  text-wrap: nowrap;
 }

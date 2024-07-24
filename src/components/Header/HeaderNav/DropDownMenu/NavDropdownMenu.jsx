@@ -6,19 +6,19 @@ const DropDownMenu = () => {
   return (
     <ul className="dropdown">
       <li className="dropdown__item">
-        <NavLink to="/tulle">TÜLLƏR</NavLink>
+        <NavLink to="/tulle" className="dropdown__item-link">TÜLLƏR</NavLink>
       </li>
       <li className="dropdown__item">
-        <NavLink to="/thick_curtains">QALIN PƏRDƏLƏR</NavLink>
+        <NavLink to="/thick_curtains" className="dropdown__item-link">QALIN PƏRDƏLƏR</NavLink>
       </li>
       <li className="dropdown__item">
-        <NavLink to="/subtle_blackout">GÜNƏŞLİK</NavLink>
+        <NavLink to="/subtle_blackout" className="dropdown__item-link">GÜNƏŞLİK</NavLink>
       </li>
       <li className="dropdown__item">
-        <NavLink to="/blackout">GÜNKEÇİRMƏZ</NavLink>
+        <NavLink to="/blackout" className="dropdown__item-link">GÜNKEÇİRMƏZ</NavLink>
       </li>
       <li className="dropdown__item">
-        <NavLink to="/peculiarities">BİLGİLƏR</NavLink>
+        <NavLink to="/peculiarities" className="dropdown__item-link">BİLGİLƏR</NavLink>
       </li>
     </ul>
   );
