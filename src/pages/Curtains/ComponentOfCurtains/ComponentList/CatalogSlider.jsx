@@ -4,20 +4,12 @@ import { NavLink } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/bundle";
 import "./catalog_slider.scss";
-import {
-  Navigation,
-  Pagination,
-  Scrollbar,
-  A11y,
-  EffectFade,
-} from "swiper/modules";
+import { Navigation, Pagination, A11y, EffectFade } from "swiper/modules";
 import ButtonLeft from "../../../../reusable/button/button-left/ButtonLeft";
 import ButtonRight from "../../../../reusable/button/button-right/ButtonRight";
 
 const CatalogSlider = () => {
   const swiperRef = useRef(null);
-  const [isStartOfList, setIsStartOfList] = useState(true);
-  const [isEndOfList, setIsEndOfList] = useState(false);
   const [slidesToShow, setSlidesToShow] = useState(getSlidesToShow());
 
   function getSlidesToShow() {
@@ -30,12 +22,6 @@ const CatalogSlider = () => {
     }
   }
 
-  const handleSwiperUpdate = (swiper) => {
-    const { isBeginning, isEnd } = swiper;
-    setIsStartOfList(isBeginning);
-    setIsEndOfList(isEnd);
-  };
-
   const handleLeftButtonClick = () => {
     if (swiperRef.current && swiperRef.current.swiper) {
       swiperRef.current.swiper.slidePrev();
@@ -45,13 +31,6 @@ const CatalogSlider = () => {
   const handleRightButtonClick = () => {
     if (swiperRef.current && swiperRef.current.swiper) {
       swiperRef.current.swiper.slideNext();
-    }
-  };
-
-  const handleSlideChange = (swiperInstance) => {
-    if (swiperInstance) {
-      setIsStartOfList(swiperInstance.isBeginning);
-      setIsEndOfList(swiperInstance.isEnd);
     }
   };
 
@@ -81,21 +60,16 @@ const CatalogSlider = () => {
       <>
         <Swiper
           ref={swiperRef}
-          modules={[Navigation, Pagination, Scrollbar, A11y, EffectFade]}
+          modules={[Navigation, Pagination, A11y, EffectFade]}
           slidesPerView={slidesToShow}
           spaceBetween={30}
           navigation={{
             nextEl: false,
             prevEl: false,
           }}
-          scrollbar={{ draggable: true }}
-          onSwiper={handleSwiperUpdate}
-          initialSlide={0}
-          onSlideChange={() => handleSlideChange(swiperRef.current?.swiper)}
         >
           {services.map((service, index) => (
             <SwiperSlide key={index} className="swiper-catalog__item">
-
               <NavLink
                 to={service.path}
                 className="swiper-catalog__item-link"
@@ -109,19 +83,12 @@ const CatalogSlider = () => {
                 <div className="swiper-catalog__item-line"></div>
                 <h4 className="swiper-catalog__item-title">{service.title}</h4>
               </NavLink>
-              
             </SwiperSlide>
           ))}
         </Swiper>
         <div className="scrollers">
-          <ButtonLeft
-            onClick={handleLeftButtonClick}
-            isStartOfList={isStartOfList}
-          />
-          <ButtonRight
-            onClick={handleRightButtonClick}
-            isEndOfList={isEndOfList}
-          />
+          <ButtonLeft onClick={handleLeftButtonClick} />
+          <ButtonRight onClick={handleRightButtonClick} />
         </div>
       </>
     );
@@ -130,5 +97,3 @@ const CatalogSlider = () => {
 };
 
 export default CatalogSlider;
-
-
