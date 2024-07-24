@@ -3,14 +3,11 @@ import "./footer.scss";
 import FooterTop from "./footer_top/FooterTop";
 import FooterBottom from "./footer_bottom/FooterBottom";
 
-
 function Footer() {
-
-
   return (
     <footer className="footer">
-
       <div className="container">
+        <div className="line"></div>
         <FooterTop />
         <div className="line"></div>
         <FooterBottom />
