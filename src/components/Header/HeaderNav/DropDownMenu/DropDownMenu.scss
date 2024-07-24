@@ -4,7 +4,7 @@
   list-style-type: none;
   margin: 0;
   padding: 0;
-  background-color: rgba(0, 0, 0, .5);
+  background-color: rgba(0, 0, 0, 0.5);
   position: absolute;
   display: none;
   z-index: 1;
@@ -29,7 +29,7 @@
         font-weight: 800;
         text-wrap: nowrap;
       }
-      &.active{
+      &.active {
         color: rgb(238, 150, 72);
       }
     }
@@ -39,7 +39,10 @@
 @media (max-width: 1023px) {
   .dropdown {
     background-color: rgba(0, 0, 0, 1);
-    border: .5px solid #fff;
+    border: 0.5px solid #fff;
+    li {
+      text-wrap: nowrap;
+    }
   }
 }
 
@@ -47,4 +50,3 @@
 .header__nav-item:hover .dropdown {
   display: block;
 }
-
