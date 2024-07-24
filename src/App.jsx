@@ -7,7 +7,6 @@ import Bedspreads from "./pages/Bedspreads/Bedspreads";
 import Blinds from "./pages/Blinds/Blinds";
 import Accessories from "./pages/Accessories/Accessories";
 import Curtains from "./pages/Curtains/Curtains";
-
 import ThickCurtains from "./pages/Curtains/ComponentOfCurtains/ComponentList/thick_Curtains/ThickCurtains";
 import Sunshade from "./pages/Curtains/ComponentOfCurtains/ComponentList/sunshade/Sunshade";
 import Blackout from "./pages/Curtains/ComponentOfCurtains/ComponentList/blackout/Blackout";
