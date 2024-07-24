@@ -27,10 +27,11 @@
         border-radius: 10px;
         color: #ffffff;
         font-weight: 800;
-        text-wrap: nowrap;
+       
       }
       &.active {
         color: rgb(238, 150, 72);
+        text-wrap: nowrap;
       }
     }
   }
@@ -40,9 +41,7 @@
   .dropdown {
     background-color: rgba(0, 0, 0, 1);
     border: 0.5px solid #fff;
-    .dropdown__item {
-      text-wrap: nowrap;
-    }
+
   }
 }
 
