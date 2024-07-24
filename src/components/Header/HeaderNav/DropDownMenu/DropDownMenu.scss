@@ -40,7 +40,7 @@
   .dropdown {
     background-color: rgba(0, 0, 0, 1);
     border: 0.5px solid #fff;
-    li {
+    .dropdown__item {
       text-wrap: nowrap;
     }
   }
