@@ -1,12 +1,11 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import PropTypes from "prop-types";
-import "./ParallaxComponent.scss";
+import "./ParallaxComponentX.scss";
 
-const ParallaxComponent = ({
+const ParallaxComponentX = ({
   backgroundImage,
   title,
   text,
-
   alignItems,
   parallaxSpeed = 1,
   parallaxHeight = 1,
@@ -15,7 +14,7 @@ const ParallaxComponent = ({
   const parallaxRef = useRef(null);
   const [scrollData, setScrollData] = useState({
     opacity: 1,
-    backgroundPositionY: "50%",
+    backgroundPositionX: "50%",
   });
 
   const handleScroll = useCallback(() => {
@@ -33,14 +32,14 @@ const ParallaxComponent = ({
 
       const scrolled =
         (windowHeight - section.top) / (windowHeight + section.height);
-      const backgroundPositionY = Math.max(
+      const backgroundPositionX = Math.max(
         0,
         Math.min(100, scrolled * 100 * parallaxSpeed)
       );
 
       setScrollData({
         opacity: clampedOpacity,
-        backgroundPositionY: `${backgroundPositionY}%`,
+        backgroundPositionX: `${backgroundPositionX}%`,
       });
     }
   }, [parallaxSpeed, parallaxHeight, parallaxwindowHeight]);
@@ -56,26 +55,26 @@ const ParallaxComponent = ({
 
   return (
     <div
-      className="menu-parallaxComponents__content"
+      className="menu-parallaxComponentsX__content"
       ref={parallaxRef}
       style={{
         backgroundImage: `url(${backgroundImage})`,
-        backgroundPositionY: scrollData.backgroundPositionY,
+        backgroundPositionX: scrollData.backgroundPositionX,
         alignItems: alignItems || "end",
       }}
     >
       <div
-        className="menu-parallaxComponents__content-context"
+        className="menu-parallaxComponentsX__content-context"
         style={{ opacity: scrollData.opacity }}
       >
-        <h1 className="menu-parallaxComponents__content-title">{title}</h1>
-        <p className="menu-parallaxComponents__content-text">{text}</p>
+        <h1 className="menu-parallaxComponentsX__content-title">{title}</h1>
+        <p className="menu-parallaxComponentsX__content-text">{text}</p>
       </div>
     </div>
   );
 };
 
-ParallaxComponent.propTypes = {
+ParallaxComponentX.propTypes = {
   backgroundImage: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
@@ -87,4 +86,4 @@ ParallaxComponent.propTypes = {
   parallaxwindowHeight: PropTypes.number,
 };
 
-export default ParallaxComponent;
+export default ParallaxComponentX;
