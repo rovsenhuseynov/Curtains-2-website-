@@ -100,11 +100,14 @@
         display: flex;
         flex-direction: column;
         padding-top: 30%;
+
         .header__nav-item {
           margin: 5vw 0;
+
           .dropdown {
             margin-block: 3vw;
             padding-block: 5vw;
+
             .dropdown__item {
               margin-bottom: 2vw;
               .dropdown__item-link {
@@ -115,7 +118,7 @@
           //============================================================
           &--dropdown {
             position: relative;
-
+            z-index: 99999999999999999999999;
             &:hover .dropDownMenu {
               display: block;
               opacity: 1;
@@ -149,4 +152,6 @@
 
 .active {
   color: rgb(238, 150, 72);
+  position: relative;
+  z-index: -1;
 }
