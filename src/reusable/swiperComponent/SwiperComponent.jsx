@@ -114,15 +114,11 @@
 
 // export default SwiperComponent;
 
-
-
-
-
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { ReactComponent as ChangeIcon } from "../../assets/images/SVG_formats/swiper_component/minus.svg";
 import { ReactComponent as OrderedIcon } from "../../assets/images/SVG_formats/swiper_component/plus.svg";
-import { useNavigate } from "react-router-dom"; // Обновляем импорт
+import { useNavigate } from "react-router-dom";
 import "./swiper_component.scss";
 import {
   Navigation,
@@ -142,7 +138,7 @@ const SwiperComponent = ({
   selectedSlideIndex,
   handleSlideClick,
   handleSwiperUpdate,
-  swiper,
+  swiper: swiperProp,
   singleSlideMode,
   getSlidesPerView,
   showLikesDislikes,
@@ -154,34 +150,11 @@ const SwiperComponent = ({
     return storedLikesDislikes;
   });
 
-  const navigate = useNavigate(); // Получаем объект navigate из React Router
-
-  useEffect(() => {
-    const handlePopState = () => {
-      window.scrollTo(0, window.scrollY);
-    };
-
-    window.addEventListener("popstate", handlePopState);
-
-    return () => {
-      window.removeEventListener("popstate", handlePopState);
-    };
-  }, []);
-
-  useEffect(() => {
-    const handleTouchMove = (event) => {
-      event.preventDefault();
-    };
-
-    window.addEventListener("touchmove", handleTouchMove, { passive: false });
-
-    return () => {
-      window.removeEventListener("touchmove", handleTouchMove);
-    };
-  }, []);
+  const navigate = useNavigate();
+  const swiperRef = useRef(null);
 
   const handleLike = (index, event) => {
-    event.stopPropagation(); // Остановить всплытие события
+    event.stopPropagation();
     const newLikesDislikes = [...likesDislikes];
     newLikesDislikes[index]++;
     setLikesDislikes(newLikesDislikes);
@@ -189,10 +162,9 @@ const SwiperComponent = ({
   };
 
   const handleDislike = (index, event) => {
-    event.stopPropagation(); // Остановить всплытие события
+    event.stopPropagation();
     const newLikesDislikes = [...likesDislikes];
     if (newLikesDislikes[index] > 0) {
-      // Проверяем, что значение не равно нулю
       newLikesDislikes[index]--;
       setLikesDislikes(newLikesDislikes);
       updateLocalStorage("likesDislikes", newLikesDislikes);
@@ -203,11 +175,47 @@ const SwiperComponent = ({
     localStorage.setItem(key, JSON.stringify(data));
   };
 
+  useEffect(() => {
+    const handleResize = () => {
+      if (swiperRef.current) {
+        swiperRef.current.update();
+        swiperRef.current.resize();
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  useEffect(() => {
+    // Сброс состояния стилей, чтобы убедиться, что прокрутка не блокируется
+    const resetScrollStyles = () => {
+      document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
+    };
+
+    // Проверяем и сбрасываем стили при монтировании компонента
+    resetScrollStyles();
+
+    return () => {
+      // Также сбрасываем стили при размонтировании компонента
+      resetScrollStyles();
+    };
+  }, []);
+
   const handleSlideClickWithHistory = (index) => {
     navigate(`${window.location.pathname}?slideIndex=${index}`, {
       replace: true,
     });
     handleSlideClick(index);
+  };
+
+  const handleSwiperUpdateWrapper = (swiperInstance) => {
+    swiperRef.current = swiperInstance;
+    handleSwiperUpdate(swiperInstance);
   };
 
   return (
@@ -222,8 +230,12 @@ const SwiperComponent = ({
       initialSlide={selectedSlideIndex}
       speed={800}
       className="main-swiper"
-      onSwiper={handleSwiperUpdate}
-      onSlideChange={() => handleSwiperUpdate(swiper)}
+      onSwiper={handleSwiperUpdateWrapper}
+      onSlideChange={() => {
+        if (swiperRef.current) {
+          handleSwiperUpdate(swiperRef.current);
+        }
+      }}
     >
       {slideData.map((service, index) => (
         <SwiperSlide
