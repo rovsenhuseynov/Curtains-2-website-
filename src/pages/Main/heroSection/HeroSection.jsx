@@ -5,7 +5,8 @@ import SliderSwiper from "./sliderSwiper/SliderSwiper";
 function HeroSection() {
   return (
     <section className="hero-section">
-      <div className="hero-section-container">
+      <div className="hero-section-container">  
+
         <div className="main-top">
           <h2 className="main-top__title-h2">Bizim Fəaliyyətlərimiz</h2>
           <p className="main-top__text">
@@ -15,9 +16,10 @@ function HeroSection() {
             olmaq və bütün ehtiyaclarınızı ödəmək öhdəliyi götürürük.
           </p>
         </div>
+        
         <SliderSwiper />
+
       </div>
-      {/* </div> */}
     </section>
   );
 }

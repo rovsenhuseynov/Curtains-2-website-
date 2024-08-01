@@ -114,6 +114,7 @@ const SliderSwiper = () => {
 
   const renderGrid = () => {
     return (
+      
       <div className="main-bottom">
         {services.map((service, index) => (
           <NavLink to={service.path} key={index} className="main-bottom__item">

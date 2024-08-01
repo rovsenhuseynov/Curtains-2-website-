@@ -14,8 +14,9 @@ export const services = [
       "Siz pərdələrin dizaynını, parçasını, ölçüsünü və üslubunu seçib, fərdi ehtiyaclarınıza uyğun olaraq sifariş edə bilərsiniz.",
   },
 
+  //   path: "/",
   {
-    path: "/",
+    path: "faq",
     image: curtain_resurs_2,
     title: "Ölçmə və quraşdırma",
     description:
