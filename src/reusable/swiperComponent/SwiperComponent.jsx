@@ -63,7 +63,6 @@ const SwiperComponent = ({
     const handleResize = () => {
       if (swiperRef.current) {
         swiperRef.current.update();
-        swiperRef.current.resize();
       }
     };
 
