@@ -84,8 +84,10 @@ const HeaderNav = () => {
             >
               AKSESUARLAR
             </NavLink>
+            
           </div>
         </nav>
+
         <button
           className={`header__menu-btn ${isOpen ? "active" : ""}`}
           onClick={toggleMenu}
